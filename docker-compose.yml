@@ -1,0 +1,22 @@
+version: "3"
+services:
+  test-chrome:
+    container_name: cypress-project
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: yarn cypress run --browser chrome
+    volumes:
+      - ./cypress:/cypress-project/cypress
+      - ./cypress.config.ts:/cypress-project/cypress.config.ts
+      - ./logs:/cypress-project/logs
+  test-firefox:
+    container_name: cypress-project
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: yarn cypress run --browser firefox
+    volumes:
+      - ./cypress:/cypress-project/cypress
+      - ./cypress.config.ts:/cypress-project/cypress.config.ts
+      - ./logs:/cypress-project/logs
