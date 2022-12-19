@@ -22,7 +22,7 @@ jobs:
       - name: Archive video
         uses: actions/upload-artifact@v3
         with:
-          name: archive-video
+          name: archive-video-chrome
           path: cypress/videos
 
   test-firefox:
@@ -39,5 +39,5 @@ jobs:
       - name: Archive video
         uses: actions/upload-artifact@v3
         with:
-          name: archive-video
+          name: archive-video-firefox
           path: cypress/videos
