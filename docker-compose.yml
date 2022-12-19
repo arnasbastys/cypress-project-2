@@ -9,6 +9,8 @@ services:
     volumes:
       - ./cypress:/cypress-project/cypress
       - ./cypress.config.ts:/cypress-project/cypress.config.ts
+      - ./tsconfig.json:/cypress-project/tsconfig.json
+      - ./package.json:/cypress-project/package.json
       - ./logs:/cypress-project/logs
   test-firefox:
     container_name: cypress-project
