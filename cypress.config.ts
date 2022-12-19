@@ -29,6 +29,7 @@ export default defineConfig({
     specPattern: "cypress/tests/**/*.ts",
     supportFile: "cypress/support/e2e.ts",
     watchForFileChanges: false,
+    requestTimeout: 10000,
     setupNodeEvents,
   },
 });
