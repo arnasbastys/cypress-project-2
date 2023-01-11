@@ -10,12 +10,18 @@ on:
 jobs:
   test-chrome:
     runs-on: ubuntu-latest
+    container: ubuntu
+    services:
+      juice_shop_app:
+        image: bkimminich/juice-shop
+        ports:
+          - 3000:3000
     steps:
       - uses: actions/checkout@v3
-      - name: Download juice-app docker
-        run: docker pull bkimminich/juice-shop
-      - name: Deploy juice-app docker
-        run: docker run -d -p 3000:3000 bkimminich/juice-shop
+      # - name: Download juice-app docker
+      #   run: docker pull bkimminich/juice-shop
+      # - name: Deploy juice-app docker
+      #   run: docker run -d -p 3000:3000 bkimminich/juice-shop
       - name: Test pages
         run: docker build . && docker-compose run test-chrome
       - name: Archive test report
