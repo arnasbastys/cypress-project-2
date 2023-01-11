@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Deploy juice app
+        run: docker pull bkimminich/juice-shop && docker run -d -p 3000:3000 bkimminich/juice-shop
       - name: Test pages
         run: docker build . && docker-compose run test-chrome
       - name: Archive test report
@@ -25,19 +27,19 @@ jobs:
           name: archive-video-chrome
           path: cypress/videos
 
-  test-firefox:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test pages
-        run: docker build . && docker-compose run test-firefox
-      - name: Archive test report
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results-firefox
-          path: logs/testResults.json
-      - name: Archive video
-        uses: actions/upload-artifact@v3
-        with:
-          name: archive-video-firefox
-          path: cypress/videos
+  # test-firefox:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Test pages
+  #       run: docker build . && docker-compose run test-firefox
+  #     - name: Archive test report
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: test-results-firefox
+  #         path: logs/testResults.json
+  #     - name: Archive video
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: archive-video-firefox
+  #         path: cypress/videos

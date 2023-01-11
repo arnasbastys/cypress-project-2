@@ -23,7 +23,7 @@ async function setupNodeEvents(
 }
 export default defineConfig({
   e2e: {
-    baseUrl: "https://mostly.ai",
+    baseUrl: "http://localhost:3000/#",
     viewportHeight: 1080,
     viewportWidth: 1920,
     specPattern: "cypress/tests/**/*.ts",

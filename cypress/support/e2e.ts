@@ -1,7 +1,5 @@
 import "./commands";
 
-import "./commands";
-
 const options = {
   collectTypes: [
     "cons:log",
