@@ -10,7 +10,6 @@ on:
 jobs:
   test-chrome:
     runs-on: ubuntu-latest
-    container: ubuntu
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
