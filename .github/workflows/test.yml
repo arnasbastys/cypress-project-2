@@ -22,7 +22,7 @@ jobs:
       # - name: Deploy juice-app docker
       #   run: docker run -d -p 3000:3000 bkimminich/juice-shop
       - name: Test pages
-        run: docker build . && docker-compose run test-chrome
+        run: yarn && yarn test
       - name: Archive test report
         uses: actions/upload-artifact@v3
         with:
