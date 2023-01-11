@@ -1,4 +1,4 @@
-export const registrationForm = {
+export const registration = {
   email: "#emailControl",
   password: "#passwordControl",
   repeatPassword: "#repeatPasswordControl",

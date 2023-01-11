@@ -7,7 +7,6 @@ export const user = {
   mobilePhone: faker.phone.number(),
   company: faker.company.name(),
   country: "Lithuania",
-  securityAnswer: "Batman",
-  message: faker.lorem.word(),
+  securityAnswer: faker.lorem.word(),
   password: faker.internet.password(),
 };
