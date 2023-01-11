@@ -8,14 +8,13 @@ on:
     branches: [main]
 
 jobs:
-  services:
+  test-chrome:
+    runs-on: ubuntu-latest
+    services:
     juice_shop_app:
       image: bkimminich/juice-shop
       ports:
         - 3000:3000
-
-  test-chrome:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Test pages
@@ -33,6 +32,11 @@ jobs:
 
   test-firefox:
     runs-on: ubuntu-latest
+    services:
+    juice_shop_app:
+      image: bkimminich/juice-shop
+      ports:
+        - 3000:3000
     steps:
       - uses: actions/checkout@v3
       - name: Test pages
