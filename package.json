@@ -8,10 +8,10 @@
     "test": "npx cypress run"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "@types/node": "^18.11.17",
-    "cypress": "^12.1.0",
-    "cypress-terminal-report": "^5.0.0",
-    "typescript": "^4.9.4"
+    "@faker-js/faker": "latest",
+    "@types/node": "latest",
+    "cypress": "latest",
+    "cypress-terminal-report": "latest",
+    "typescript": "latest"
   }
 }

@@ -6,8 +6,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "baseUrl": ".",
+    "moduleResolution": "NodeNext",
     "skipLibCheck": true,
-    "moduleResolution": "NodeNext"
+    "paths": {
+      "@pom": ["cypress/support/pom/index"],
+      "@constants": ["./cypress/support/constants"]
+    }
   },
   "include": ["**/*.ts"]
 }

@@ -1,21 +1,20 @@
-import { login, navigationBar } from "../support/pages/index";
-import { createUser, User } from "../support/tasks/createUser.task";
+import { loginPage, registerUserTask, User, navigationBar } from "@pom";
 
 describe("Login", () => {
-  let createdUser: User;
+  let registeredUser: User;
   beforeEach(() => {
-    createdUser = createUser();
+    registeredUser = registerUserTask();
     cy.setCookie("cookieconsent_status", "dismiss");
     cy.setCookie("welcomebanner_status", "dismiss");
     cy.visit("/#/login");
   });
 
   it("User is able successfully login", () => {
-    console.log(createdUser);
-    cy.get(login.email).type(createdUser.email);
-    cy.get(login.password).type(createdUser.password);
-    cy.get(login.loginButton).click();
+    console.log(registeredUser);
+    cy.get(loginPage.email).type(registeredUser.email);
+    cy.get(loginPage.password).type(registeredUser.password);
+    cy.get(loginPage.loginButton).click();
     cy.get(navigationBar.account).click();
-    cy.contains(createdUser.email).should("exist");
+    cy.contains(registeredUser.email).should("exist");
   });
 });

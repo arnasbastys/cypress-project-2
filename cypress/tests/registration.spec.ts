@@ -1,5 +1,5 @@
-import { user } from "../support/constants";
-import { registration } from "../support/pages/index";
+import { user } from "@constants";
+import { registrationPage } from "@pom";
 
 describe("Registration", () => {
   beforeEach(() => {
@@ -9,13 +9,13 @@ describe("Registration", () => {
   });
 
   it("User is able successfully register", () => {
-    cy.get(registration.email).type(user.email);
-    cy.get(registration.password).type(user.password);
-    cy.get(registration.repeatPassword).type(user.password);
-    cy.get(registration.securityQuestion).click();
-    cy.contains(registration.securityQuestionMovie).click();
-    cy.get(registration.securityAnswer).type(user.securityAnswer);
-    cy.get(registration.registerButton).click();
-    cy.contains(registration.successMessage).should("be.visible");
+    cy.get(registrationPage.email).type(user.email);
+    cy.get(registrationPage.password).type(user.password);
+    cy.get(registrationPage.repeatPassword).type(user.password);
+    cy.get(registrationPage.securityQuestion).click();
+    cy.contains(registrationPage.securityQuestionMovie).click();
+    cy.get(registrationPage.securityAnswer).type(user.securityAnswer);
+    cy.get(registrationPage.registerButton).click();
+    cy.contains(registrationPage.successMessage).should("be.visible");
   });
 });

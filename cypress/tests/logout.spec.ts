@@ -1,10 +1,8 @@
-import { login, navigationBar } from "../support/pages/index";
-import { createUser, User } from "../support/tasks/createUser.task";
-import { createUserAndlogin } from "../support/tasks/login.task";
+import { navigationBar, createUserAndLoginTask } from "@pom";
 
 describe("Logout", () => {
   it("User is able successfully logout", () => {
-    createUserAndlogin();
+    createUserAndLoginTask();
     cy.setCookie("cookieconsent_status", "dismiss");
     cy.setCookie("welcomebanner_status", "dismiss");
     cy.visit("/#/search");
